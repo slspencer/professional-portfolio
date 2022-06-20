@@ -1,0 +1,66 @@
+* {
+	box-sizing: border-box;
+}
+.jumbotron {
+	background-color: #428bca
+}
+.jumbotron h1 {
+	color:white;
+}
+
+p, h1, h4 {
+	font-family: 'Roboto Slab', serif;
+}
+
+/* classes */
+.menu {
+    
+}
+
+/* css styling for grid layout adapted from https://stackoverflow.com/questions/55546667/how-to-put-links-and-text-over-grid-items-in-a-photo-grid */
+
+/* create 2 x 3 grid */
+.gallery {
+	display: grid;
+	/* container max is 768. 350px max column width allows for gap b/w cols */
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-gap: 10px;
+}
+.title {
+	position: relative;
+	width: 100%;
+	border: 1px solid black;
+	display: grid; /* title is an 'inner grid' */
+}
+.title h4 {
+	/* grid title */
+	margin: 0;
+	background-color: #000;
+	color: white;
+	padding: 10px 14px;
+	opacity: 1;
+	grid-row: 1; /* place in first row */
+	grid-column: 1;  /* place in first column */
+	align-self: flex-start; /* take auto-width */
+  }
+.title a {
+	/* grid link */
+	display: block;
+	grid-row: 1; /* 1st row of inner grid */
+	grid-column: 1; /* 1st col of inner grid */
+}
+.title img {
+	/* grid image */
+	object-fit: cover;
+	display: block;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding-top: 38px; /* move image down to clear the title - font 18px + padding top 10px and patting bottom 14px = 38px */
+}
+.tile:hover {
+	/* grid cursor behavior */
+	border: 1px solid #0066FF;
+	opacity: .55;
+}
+
