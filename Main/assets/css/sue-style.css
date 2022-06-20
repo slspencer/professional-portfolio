@@ -49,6 +49,7 @@ p, h1, h4 {
 	display: block;
 	grid-row: 1; /* 1st row of inner grid */
 	grid-column: 1; /* 1st col of inner grid */
+	target: "_blank";
 }
 .title img {
 	/* grid image */
