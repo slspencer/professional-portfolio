@@ -1,64 +1,156 @@
+/* globals */
 * {
 	box-sizing: border-box;
+} 
+html {
+	font-size: 62.5%;
+}
+body {
+	padding: 1rem;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';	
+	font-size: 1.75rem;
+	line-height: 1.5;	
 }
 
-
+/* tags */
 p, h1, h4 {
 	font-family: 'Roboto Slab', serif;
 }
 
-/* classes */
-
+/* classes for jumbotron*/
 .jumbotron {
 	background-color: #428bca
 }
 .jumbotron h1 {
 	color:white;
 }
+.jumbotron ul {
+	color: white;
+	text-align: center;
+}
+.jumbotron ul li {
+	display: inline-block;
+}
+.jumbotron a:link {
+	color: midnightblue;
+}
+.jumbotron a:visited {
+	color:darkslategray
+}
+.jumbotron a:hover {
+	color:black;
+}
+.jumbotron a:active {
+	color: blue;
+} 
 
-.gallery {
-	/* create 2 x 3 grid adapted from https://stackoverflow.com/questions/55546667/how-to-put-links-and-text-over-grid-items-in-a-photo-grid*/
-	display: grid;
-	/* container max is 768. 350px max column width allows for gap b/w cols */
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-	grid-gap: 10px;
+/* classes for cards */
+main {
+	width: 96%;
+	margin: 2rem auto;
 }
-.title {
+
+.row {
+	/* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */	
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	margin-left: -1.5rem;
+	margin-right: -1.5rem;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.card-column {
+	/* using a mobile-first approach, set base column width to be 100% and we'll update it using media queries for larger screen sizes */	
+	flex: 1 0 100%;
+	padding: 1.5rem;
+	/* when the screen resizes, make it so our columns don't jump in size */
+	transition: flex-basis 500ms linear;
+	margin-bottom: 1.5rem;
+}
+
+.code-card {
+	/* make each card a flexbox column to align and justify content within it */	
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	min-height: 100%;
+	padding: 2rem;
+	/* outline is like border, but on the outside of the box instead of inside */
+	outline: 2px solid black;
+	outline-offset: -2px;
+	transition: all 0.5s ease-in-out;
+}
+
+.code-card .card-header {
+	/* use position and negative margins to move title of card over the card's outline and create an overlap effect */
 	position: relative;
-	width: 100%;
-	border: 1px solid black;
-	display: grid; /* title is an 'inner grid' */
+	margin: -1rem 0 1.5rem 0;
+	padding: 0.5rem 1rem;
+	background-color: var(--outer-space);
+	color: var(--heliotrope);
+	border: 2px solid var(--gin);
+	border-radius: 8px;
+	transition: all 0.5s ease-in-out;
 }
-.title:hover {
-	/* grid cursor behavior */
+
+.code-card .code-block {
+  /* each card's code block grows to the height of the largest code block on the page, making each card even in height  */	
+  flex-grow: 1;
+}
+
+.card {
+	max-width: 600px;
+	background-color: white;
+	color: black;
+	padding: 1rem;
+	display: inline-block;
+}
+.card:hover {
 	transform: scale(1.03) !important;
 }
-.title h4 {
-	/* grid title */
+.card h4 {
 	margin: 0;
 	background-color: #000;
 	color: white;
-	padding: 10px 14px;
+	padding: .6254rem .875rem; 
 	opacity: 1;
-	grid-row: 1; /* place in first row */
-	grid-column: 1;  /* place in first column */
-	align-self: flex-start; /* take auto-width */
-  }
-.title a {
-	/* grid link */
-	display: block;
-	grid-row: 1; /* 1st row of inner grid */
-	grid-column: 1; /* 1st col of inner grid */
-	target: "_blank";
 }
-.title img {
-	/* grid image */
+.card a {
+	display: block;
+}
+.card img {
 	object-fit: cover;
 	display: block;
 	height: 100%;
 	width: 100%;
 	margin: 0;
-	padding-top: 38px; /* move image down to clear the title - font 18px + padding top 10px and patting bottom 14px = 38px */
+} 
+
+/* -----if statements----- */
+
+/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+@media screen and (min-width: 768px) {
+	/* on tablets, set columns to only be 50% of the width and not grow */
+	.card-column { 
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+
+	/* select the last child to grow to full width if it has space to grow */
+	.card-column:last-child {
+		flex-grow: 1;
+	}
 }
 
-
+  /* media query for larger screens */
+@media screen and (min-width: 992px) {
+	header { width: 75%; }
+	.card-column {
+		flex: 0 0 33.333%;
+		max-width: 33.333%;
+	}
+}
