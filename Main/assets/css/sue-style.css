@@ -1,6 +1,14 @@
 * {
 	box-sizing: border-box;
 }
+
+
+p, h1, h4 {
+	font-family: 'Roboto Slab', serif;
+}
+
+/* classes */
+
 .jumbotron {
 	background-color: #428bca
 }
@@ -8,19 +16,8 @@
 	color:white;
 }
 
-p, h1, h4 {
-	font-family: 'Roboto Slab', serif;
-}
-
-/* classes */
-.menu {
-    
-}
-
-/* css styling for grid layout adapted from https://stackoverflow.com/questions/55546667/how-to-put-links-and-text-over-grid-items-in-a-photo-grid */
-
-/* create 2 x 3 grid */
 .gallery {
+	/* create 2 x 3 grid adapted from https://stackoverflow.com/questions/55546667/how-to-put-links-and-text-over-grid-items-in-a-photo-grid*/
 	display: grid;
 	/* container max is 768. 350px max column width allows for gap b/w cols */
 	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -31,6 +28,10 @@ p, h1, h4 {
 	width: 100%;
 	border: 1px solid black;
 	display: grid; /* title is an 'inner grid' */
+}
+.title:hover {
+	/* grid cursor behavior */
+	transform: scale(1.03) !important;
 }
 .title h4 {
 	/* grid title */
@@ -58,9 +59,5 @@ p, h1, h4 {
 	margin: 0;
 	padding-top: 38px; /* move image down to clear the title - font 18px + padding top 10px and patting bottom 14px = 38px */
 }
-.tile:hover {
-	/* grid cursor behavior */
-	border: 1px solid #0066FF;
-	opacity: .55;
-}
+
 
