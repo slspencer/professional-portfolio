@@ -18,31 +18,37 @@ p, h1, h4 {
 }
 
 /* classes for jumbotron*/
-.jumbotron {
-	background-color: #428bca
+.navbar {
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #2a607c;
+	background-image: url("../img/seamlywebsite.png");
+	max-height: 200px;
+    color: #ffffff;
 }
-.jumbotron h1 {
-	color:white;
+
+.navbar div {
+    padding-top: 15px;
+    margin-right: 20px;
+    float: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
 }
-.jumbotron ul {
-	color: white;
-	text-align: center;
+
+.navbar div ul {
+    list-style-type: none;
 }
-.jumbotron ul li {
-	display: inline-block;
+
+.navbar div ul li {
+    display: inline-block;
+    margin-left: 25px;
+	text-decoration: underline;	
 }
-.jumbotron a:link {
-	color: midnightblue;
+
+.navbar #quote {
+	display: block;
+	float: right;
 }
-.jumbotron a:visited {
-	color:darkslategray
-}
-.jumbotron a:hover {
-	color:black;
-}
-.jumbotron a:active {
-	color: blue;
-} 
 
 /* classes for cards */
 main {
@@ -149,6 +155,6 @@ main {
 	header { width: 75%; }
 	.card-column {
 		flex: 0 0 25.0%;
-		max-width: 25.0%;
+		max-width: 25%;
 	}
 }
