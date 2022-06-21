@@ -90,8 +90,6 @@ main {
 	position: relative;
 	margin: -1rem 0 1.5rem 0;
 	padding: 0.5rem 1rem;
-	background-color: var(--outer-space);
-	color: var(--heliotrope);
 	border: 2px solid var(--gin);
 	border-radius: 8px;
 	transition: all 0.5s ease-in-out;
@@ -105,7 +103,7 @@ main {
 .card {
 	max-width: 600px;
 	background-color: white;
-	color: black;
+	color:black;
 	padding: 1rem;
 	display: inline-block;
 }
@@ -150,7 +148,7 @@ main {
 @media screen and (min-width: 992px) {
 	header { width: 75%; }
 	.card-column {
-		flex: 0 0 33.333%;
-		max-width: 33.333%;
+		flex: 0 0 25.0%;
+		max-width: 25.0%;
 	}
 }
