@@ -17,7 +17,12 @@ p, h1, h4 {
 	font-family: 'Roboto Slab', serif;
 }
 
-/* classes for jumbotron*/
+/* header area*/
+.#quote {
+    font-size: 1.5rem;
+	font-family: 'Roboto Slab', serif;
+	text-decoration: none;		
+}
 .navbar {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -30,34 +35,36 @@ p, h1, h4 {
 .navbar div {
     padding-top: 15px;
     margin-right: 20px;
-    float: left;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
 }
 
+.navbar h1 {
+	float: left;
+}
+
 .navbar div ul {
+	display: inline-block;
     list-style-type: none;
+	float: right;
 }
 
 .navbar div ul li {
-    display: inline-block;
+	display: inline;
     margin-left: 25px;
 	text-decoration: underline;	
 }
 
-.navbar #quote {
+.navbar p {
 	display: block;
 	float: right;
 }
 
 /* classes for cards */
-main {
-	width: 96%;
-	margin: 2rem auto;
-}
 
 .row {
-	/* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */	
+	/* create our main grid with flexbox, 
+	use negative margins to offset the padding on the .card-column class */	
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -70,7 +77,8 @@ main {
 }
 
 .card-column {
-	/* using a mobile-first approach, set base column width to be 100% and we'll update it using media queries for larger screen sizes */	
+	/* using a mobile-first approach, set base column width to be 100% and we'll 
+	update it using media queries for larger screen sizes */	
 	flex: 1 0 100%;
 	padding: 1.5rem;
 	/* when the screen resizes, make it so our columns don't jump in size */
@@ -92,7 +100,8 @@ main {
 }
 
 .code-card .card-header {
-	/* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+	/* use position and negative margins to move title of card over the 
+	card's outline and create an overlap effect */
 	position: relative;
 	margin: -1rem 0 1.5rem 0;
 	padding: 0.5rem 1rem;
