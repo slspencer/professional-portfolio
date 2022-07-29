@@ -83,33 +83,37 @@ li a:hover {
 /* ========= */
 /* Work Area */
 /* ========= */
-
+.bottom-left {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
 .grid-container {
 	display: grid;
 	color: black;
 	font-size: 1.25em;
     max-width: 1200px;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(3, 1fr); 
     grid-template-rows: 9.376rem 1fr 8.125rem  6.25rem;     
     grid-gap: 2rem; 
     @media screen 
     and (min-device-width: 768px) { 
-        grid-template-columns: repeat(4, 1fr); 
+        grid-template-columns: repeat(3, 1fr); 
         grid-template-rows: 9.376rem 18.75rem 8.125rem  6.25rem;         
     } 
     @media only screen 
     and (min-device-width: 300px) {
         grid-template-columns: repeat(1, 1fr); 
         grid-template-rows: 9.376rem 25rem repeat(2, 18.75rem) repeat(2, 8.125rem) repeat(2, 6.25rem);          
-  }
+    }
 }
 
 .about1 {
     /* about-text */
     font-size: 3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
-	grid-column: span 2;
-    grid-row: span 2;
+	grid-column: span 1;
+    grid-row: span 3;
     padding-top: 10%;
     text-align: right;   
     border-right: 1px solid black; 
@@ -142,7 +146,7 @@ li a:hover {
 
 .work1 {
     /* Work text */
-	grid-column: 1 / span 2;
+	grid-column: 1 / span 1;
     grid-row: span 5;
     font-size: 3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;  
@@ -158,6 +162,10 @@ margin: 0;
     grid-row: span 3;
     background-color:lightslategray;
     padding: 1rem;
+}
+.site1 p {
+    background-color: lightgray; 
+    color: black;   
 }
 .site1 img {
     object-fit: cover;
@@ -202,7 +210,7 @@ margin: 0;
     display: block;
     font-size: 3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
-	grid-column: 1 / span 2;
+	grid-column: 1 / span 1;
     grid-row: span 1;
     padding-top: 10%;
     padding-right: 1rem;
